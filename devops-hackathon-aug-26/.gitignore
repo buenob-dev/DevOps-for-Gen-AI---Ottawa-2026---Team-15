@@ -1,0 +1,9 @@
+# Shared across every uv-managed subpackage in this monorepo.
+__pycache__/
+*.pyc
+.venv/
+.env
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
