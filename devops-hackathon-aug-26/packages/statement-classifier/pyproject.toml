@@ -1,0 +1,29 @@
+[project]
+name = "statement-classifier"
+version = "0.1.0"
+description = "Classifies statements as fact or opinion, with a confidence score, via an LLM routed through OpenRouter."
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+    "langchain-openai>=0.2",
+    "pydantic>=2.6",
+]
+
+[project.scripts]
+statement-classifier = "statement_classifier.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/statement_classifier"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
